@@ -1,3 +1,3 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "lebanon-guide-appdb");
+$conn = new mysqli("localhost", "root", "", "lebanon_guide_appdb");
 ?>
