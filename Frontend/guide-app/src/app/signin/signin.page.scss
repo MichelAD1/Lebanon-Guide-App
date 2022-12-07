@@ -1,0 +1,31 @@
+.toolbar {
+  position: absolute;
+  width: 404px;
+  height: 72px;
+  left: -7px;
+  top: 0px;
+
+  background: #d9d9d9;
+}
+.leb-guide {
+  display: flex;
+  width: 103px;
+  height: 46px;
+  justify-content: flex-start;
+  margin-left: 14px;
+  margin-top: 12px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 21px;
+  line-height: 21px;
+  letter-spacing: 0.3px;
+
+  color: #392828;
+}
+ion-content.background {
+  background-color: white;
+  --background: url("../../assets/images/img-1.png");
+  height: auto;
+  width: auto;
+}
