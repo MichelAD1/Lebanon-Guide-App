@@ -123,3 +123,77 @@ ion-content.background {
   padding: 0;
   color: #545563;
 }
+a:hover {
+  text-decoration: underline;
+}
+.no-account-a {
+  text-decoration: none;
+  position: absolute;
+  height: 20px;
+  left: 232px;
+  right: 40px;
+  top: 483px;
+
+  /* Body 1 - regular 14 (20, 0.1px) */
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+
+  /* neutral/gray dark */
+
+  color: #392828;
+}
+.no-account {
+  text-decoration: none;
+  position: absolute;
+  height: 20px;
+  left: 83px;
+  right: 30px;
+  top: 469px;
+
+  /* Body 1 - regular 14 (20, 0.1px) */
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+
+  /* neutral/gray dark */
+
+  color: #392828;
+}
+.login-button {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 8px;
+
+  position: absolute;
+  height: 44px;
+  left: 30px;
+  right: 30px;
+  top: 607px;
+
+  background: #714747;
+  box-shadow: 0px 8px 20px rgba(78, 96, 255, 0.16);
+  border-radius: 8px;
+}
