@@ -1,0 +1,7 @@
+{
+  "name": "guide-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
