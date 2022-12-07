@@ -72,3 +72,54 @@ ion-content.background {
 
   color: #545563;
 }
+.email-info {
+  /* Sign in with your data that you entered during your registration. */
+  position: absolute;
+  height: 40px;
+  left: 30px;
+  right: 30px;
+  top: 300px;
+
+  /* Body 1 - regular 14 (20, 0.1px) */
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+
+  letter-spacing: 0.1px;
+
+  /* neutral/gray dark */
+  padding: 0;
+  color: #545563;
+}
+.box {
+  box-sizing: border-box;
+  border: 1px solid #c7c8d2;
+  border-radius: 10px;
+}
+.pass-info {
+  /* Sign in with your data that you entered during your registration. */
+  position: absolute;
+  height: 40px;
+  left: 30px;
+  right: 30px;
+  top: 390px;
+
+  /* Body 1 - regular 14 (20, 0.1px) */
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+
+  letter-spacing: 0.1px;
+
+  /* neutral/gray dark */
+  padding: 0;
+  color: #545563;
+}
