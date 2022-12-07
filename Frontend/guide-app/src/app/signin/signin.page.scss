@@ -29,3 +29,46 @@ ion-content.background {
   height: auto;
   width: auto;
 }
+.login {
+  position: absolute;
+  height: 82px;
+  left: 30px;
+  right: 30px;
+  top: 107px;
+  /* H1 - bold 60 (82, 0.1px) */
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 82px;
+  /* identical to box height, or 137% */
+
+  letter-spacing: 0.1px;
+
+  color: #392828;
+}
+
+.signin-info {
+  /* Sign in with your data that you entered during your registration. */
+
+  position: absolute;
+  height: 40px;
+  left: 30px;
+  right: 30px;
+  top: 205px;
+
+  /* Body 1 - regular 14 (20, 0.1px) */
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+
+  letter-spacing: 0.1px;
+
+  /* neutral/gray dark */
+
+  color: #545563;
+}
