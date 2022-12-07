@@ -1,25 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 ion-content {
   --background: rgb(255, 255, 255);
 }
 
-@-webkit-keyframes scale-in-center {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-.fade-in {
+ion-content.background {
+  background-color: white;
   animation: fadeIn 4s;
-  img {
-    height: auto;
-    width: auto;
-  }
+  --background: url("../../assets/images/img-1.png");
+  height: auto;
+  width: auto;
 }
 @keyframes fadeIn {
   from {
@@ -28,4 +17,25 @@ ion-content {
   to {
     opacity: 1;
   }
+}
+.icon-img {
+  display: flex;
+  height: 170px;
+  width: 170px;
+  margin: 0 auto;
+  opacity: 80%;
+  margin-top: 60px;
+}
+.fade-in-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 170px;
+  font-family: "Nunito";
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 21px;
+  letter-spacing: 0.3px;
+  color: #392828;
 }
