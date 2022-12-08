@@ -2,4 +2,16 @@
   <div class="starting-img">
     <h1 class="leb-guide">Lebanon's Guide</h1>
   </div>
+  <div class="search-bar">
+    <ion-label position="floating"></ion-label>
+    <div class="box">
+      <ion-icon class="search-icon" name="search-outline"></ion-icon>
+      <ion-input
+        (keyup.enter)="submit()"
+        class="search-in"
+        type="text"
+        placeholder="Search"
+      ></ion-input>
+    </div>
+  </div>
 </ion-content>
