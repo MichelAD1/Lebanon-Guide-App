@@ -1,0 +1,61 @@
+.leb-guide {
+  display: flex;
+  width: 103px;
+  height: 46px;
+  justify-content: flex-start;
+  margin-left: 14px;
+  margin-top: 12px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 21px;
+  line-height: 21px;
+  letter-spacing: 0.3px;
+
+  color: #392828;
+}
+ion-content.background {
+  --ion-background-color: #d9d9d9;
+  height: auto;
+  width: auto;
+}
+.type-item {
+  position: absolute;
+  height: 20px;
+  left: 150px;
+  right: -27px;
+  top: 122px;
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 125% */
+
+  letter-spacing: 0.1px;
+
+  /* neutral/gray dark */
+
+  color: #545563;
+}
+.location-and-name {
+  position: absolute;
+  height: 20px;
+  left: 65px;
+  right: -24px;
+  top: 157px;
+  text-transform: uppercase;
+  font-family: "Rosario";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 20px;
+  /* identical to box height, or 100% */
+
+  letter-spacing: 0.1px;
+
+  /* neutral/gray dark */
+
+  color: #545563;
+}
