@@ -28,6 +28,39 @@ ion-content.background {
 
   color: #392828;
 }
+.box {
+  display: flex;
+  width: 300px;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 1px solid #888889;
+  border-radius: 10px;
+  margin-top: 180px;
+  margin-left: 40px;
+}
+.info-header {
+  position: absolute;
+  height: 24px;
+  left: 45px;
+  right: 16px;
+  top: 130px;
+
+  /* H6 - bold 18 (24, 0.1px) */
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: 0.1px;
+
+  /* neutral/black */
+
+  color: #2b2b43;
+}
 .acc-header {
   position: absolute;
   height: 28px;
@@ -49,4 +82,33 @@ ion-content.background {
   /* neutral/black */
 
   color: #2b2b43;
+}
+.box-input {
+  box-sizing: border-box;
+  border: 1px solid #888889;
+  width: 90%;
+  border-radius: 10px;
+}
+.fname-info {
+  /* Sign in with your data that you entered during your registration. */
+  position: absolute;
+  height: 40px;
+  left: 40px;
+  right: 30px;
+  top: 200px;
+
+  /* Body 1 - regular 14 (20, 0.1px) */
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+
+  letter-spacing: 0.1px;
+
+  /* neutral/gray dark */
+  padding: 0;
+  color: #545563;
 }
