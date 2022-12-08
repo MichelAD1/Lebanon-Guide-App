@@ -29,15 +29,15 @@ ion-content.background {
   color: #392828;
 }
 .box {
-  display: flex;
-  width: 300px;
-  flex-direction: row;
-  justify-content: space-between;
+  background-color: #c1c1c31b;
   box-sizing: border-box;
-  border: 1px solid #888889;
+  width: 350px;
+  height: 400px;
+  float: none;
+  margin-top: 140px;
+  margin-left: 20px;
+  border: 1px solid #888889b6;
   border-radius: 10px;
-  margin-top: 180px;
-  margin-left: 40px;
 }
 .info-header {
   position: absolute;
@@ -64,16 +64,16 @@ ion-content.background {
 .acc-header {
   position: absolute;
   height: 28px;
-  left: 30px;
+  left: 24px;
   right: 30px;
-  top: 87px;
+  top: 75px;
 
   /* H5 - semibold 20 (28, 0.1px) */
 
   font-family: "Nunito";
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 28px;
   /* identical to box height, or 140% */
 
