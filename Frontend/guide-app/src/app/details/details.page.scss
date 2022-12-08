@@ -19,6 +19,33 @@ ion-content.background {
   height: auto;
   width: auto;
 }
+.item-img {
+  position: absolute;
+  width: 358px;
+  height: 461px;
+  left: 15px;
+  top: 235px;
+}
+.item-desc {
+  position: absolute;
+  height: 180px;
+  left: 32px;
+  right: 33px;
+  top: 720px;
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 23px;
+  /* or 118% */
+
+  letter-spacing: 0.14px;
+
+  /* neutral/gray dark */
+
+  color: #545563;
+}
 .type-item {
   position: absolute;
   height: 20px;
