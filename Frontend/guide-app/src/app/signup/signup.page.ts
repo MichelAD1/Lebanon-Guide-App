@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class SignupPage implements OnInit {
   constructor(private router: Router, private http: HttpClient) {}
   goToHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/tabs']);
   }
   ngOnInit() {}
 }
