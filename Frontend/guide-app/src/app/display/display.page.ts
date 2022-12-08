@@ -12,5 +12,8 @@ export class DisplayPage implements OnInit {
   viewDetails() {
     this.router.navigateByUrl('/details');
   }
+  goBack() {
+    this.router.navigateByUrl('/tabs');
+  }
   ngOnInit() {}
 }
