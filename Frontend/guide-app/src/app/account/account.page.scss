@@ -1,0 +1,52 @@
+ion-content.background {
+  --ion-background-color: #ffffff;
+  height: auto;
+  width: auto;
+}
+.toolbar {
+  position: absolute;
+  width: 404px;
+  height: 72px;
+  left: -7px;
+  top: 0px;
+
+  background: #d9d9d9;
+}
+.leb-guide {
+  display: flex;
+  width: 103px;
+  height: 46px;
+  justify-content: flex-start;
+  margin-left: 14px;
+  margin-top: 12px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 21px;
+  line-height: 21px;
+  letter-spacing: 0.3px;
+
+  color: #392828;
+}
+.acc-header {
+  position: absolute;
+  height: 28px;
+  left: 30px;
+  right: 30px;
+  top: 87px;
+
+  /* H5 - semibold 20 (28, 0.1px) */
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  /* identical to box height, or 140% */
+
+  letter-spacing: 0.1px;
+
+  /* neutral/black */
+
+  color: #2b2b43;
+}
