@@ -14,6 +14,15 @@
 
   color: #392828;
 }
+.toolbar {
+  position: absolute;
+  width: 404px;
+  height: 72px;
+  left: -7px;
+  top: 0px;
+
+  background: #d9d9d9;
+}
 ion-content.background {
   --ion-background-color: #d9d9d9;
   height: auto;
@@ -31,7 +40,7 @@ ion-content.background {
   width: 103px;
   height: 46px;
   justify-content: flex-end;
-  margin-left: 320px;
+  margin-left: 330px;
   margin-top: -60px;
   width: 10%;
   --background: #714747;
