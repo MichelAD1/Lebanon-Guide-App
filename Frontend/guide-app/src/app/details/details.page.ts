@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -6,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private router: Router, private http: HttpClient) {}
+  goBack() {
+    this.router.navigateByUrl('/display');
   }
-
+  ngOnInit() {}
 }

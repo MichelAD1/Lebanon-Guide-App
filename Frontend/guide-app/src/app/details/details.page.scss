@@ -26,6 +26,17 @@ ion-content.background {
   left: 15px;
   top: 235px;
 }
+.back-button {
+  display: flex;
+  width: 103px;
+  height: 46px;
+  justify-content: flex-end;
+  margin-left: 320px;
+  margin-top: -60px;
+  width: 10%;
+  --background: #714747;
+  border-radius: 20px;
+}
 .empty {
   position: absolute;
   height: 40px;
