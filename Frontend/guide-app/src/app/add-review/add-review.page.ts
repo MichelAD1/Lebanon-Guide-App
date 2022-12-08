@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-review',
@@ -6,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-review.page.scss'],
 })
 export class AddReviewPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private router: Router, private http: HttpClient) {}
+  goToHome() {
+    this.router.navigate(['/tabs']);
   }
-
+  ngOnInit() {}
 }
