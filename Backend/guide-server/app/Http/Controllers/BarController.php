@@ -20,4 +20,10 @@ class BarController extends Controller
             ]);
         }
     }
+    function list(){
+        $bar = Bar::all();
+        return response()->json([
+            "Bars" => $bar
+        ]);
+    }
 }
