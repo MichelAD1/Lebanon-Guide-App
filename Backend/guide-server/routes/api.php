@@ -27,6 +27,7 @@ Route::group(["prefix" => "v0.1"], function() {
 		});
 		Route::group(["prefix" => "beaches"], function() {
 			Route::post("addBeach",[BeacheController::class,"add"]);
+			Route::get("getBeaches",[BeacheController::class,"list"]);
 		});
 		Route::group(["prefix" => "cafes"], function() {
 			

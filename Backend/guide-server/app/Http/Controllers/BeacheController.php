@@ -19,4 +19,10 @@ class BeacheController extends Controller
             ]);
         }
     }
+    function list(){
+        $beach = Beache::all();
+        return response()->json([
+            "Beaches" => $beach
+        ]);
+    }
 }
