@@ -30,4 +30,15 @@ class RestaurantController extends Controller
             "Restaurants" => $resto
         ]);
     }
+    function searchPlace(Request $request){
+        $resto = Restaurant::where("name", $request->name)->get();
+        $bar = Bar::where("name", $request->name)->get();
+        $beach = Beache::where("name", $request->name)->get();
+        $cafe = Cafe::where("name", $request->name)->get();
+        $rooftop = Rooftop::where("name", $request->name)->get();
+        $result=array_merge(json_decode($resto, true),json_decode($bar, true),json_decode($beach, true),json_decode($cafe, true),json_decode($rooftop, true));
+        return response()->json([
+            "Places" => $result
+        ]);
+    }
 }
