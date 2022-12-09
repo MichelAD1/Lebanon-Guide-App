@@ -14,6 +14,7 @@ Route::group(["prefix" => "v0.1"], function() {
 		Route::post("signup/{id?}",[UserController::class,"signupOrUpdate"]);
 		Route::post("login",[UserController::class,"login"]);
 		Route::get("get/{id}",[UserController::class,"getUser"]);
+		Route::get("delete/{id}",[UserController::class,"deleteUser"]);
 	});
 	Route::group(["prefix" => "places"], function() {
 		Route::post("search",[RestaurantController::class,"searchPlace"]);

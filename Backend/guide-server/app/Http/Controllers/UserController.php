@@ -79,4 +79,11 @@ class UserController extends Controller
             "User"=>$user
         ]);
     }
+    function deleteUser($id){
+        $user=user::find($id);
+        $user->delete();
+        return response()->json([
+            "User"=>"Removed"
+        ]);
+    }
 }
