@@ -30,7 +30,7 @@ Route::group(["prefix" => "v0.1"], function() {
 			Route::get("getBeaches",[BeacheController::class,"list"]);
 		});
 		Route::group(["prefix" => "cafes"], function() {
-			
+			Route::post("addCafe",[CafeController::class,"add"]);
 		});
 		Route::group(["prefix" => "rooftops"], function() {
 			
