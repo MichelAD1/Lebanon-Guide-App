@@ -34,6 +34,7 @@ Route::group(["prefix" => "v0.1"], function() {
 			Route::get("getCafes",[CafeController::class,"list"]);
 		});
 		Route::group(["prefix" => "rooftops"], function() {
+			Route::post("addRooftop",[RooftopController::class,"add"]);
 			
 		});
 	});
