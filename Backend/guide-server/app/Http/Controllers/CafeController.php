@@ -19,4 +19,10 @@ class CafeController extends Controller
             ]);
         }
     }
+    function list(){
+        $cafe = cafe::all();
+        return response()->json([
+            "Cafes" => $cafe
+        ]);
+    }
 }
