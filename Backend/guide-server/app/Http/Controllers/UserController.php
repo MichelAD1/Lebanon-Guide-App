@@ -28,7 +28,7 @@ class UserController extends Controller
                 }
             }
             if($request->has('password')){
-                $user->update(["password"=>bcrypt($request->password)]);
+                $user->update(["password"=> hash('sha256', $request->password)]);
             }
             if($request->phone_number){
                 $user->update(["phone_number"=>$request->phone_number]);
@@ -47,7 +47,7 @@ class UserController extends Controller
                 $user->first_name=$request->first_name;
                 $user->last_name=$request->last_name;
                 $user->email=$request->email;
-                $user->password=bcrypt($request->password);
+                $user->password=hash('sha256', $request->password);
                 $user->phone_number=$request->phone_number;
                 if($user->save()){
                     return response()->json([
@@ -55,6 +55,22 @@ class UserController extends Controller
                     ]);
                 }
             }
+        }
+    }
+
+    function login(Request $request){
+        $user = User::where("email", $request->email)
+                    ->where("password", hash('sha256', $request->password))->exists();
+        if($user){
+            $user = User::where("email", $request->email)
+                        ->where("password", hash('sha256', $request->password))->get();
+            return response()->json([
+                "User" => $user
+            ]);         
+        }else{
+            return response()->json([
+                "User" => "Not found"
+            ]); 
         }
     }
 }
