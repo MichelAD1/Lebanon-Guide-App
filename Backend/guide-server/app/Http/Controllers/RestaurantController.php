@@ -24,4 +24,10 @@ class RestaurantController extends Controller
             ]);
         }
     }
+    function list(){
+        $resto = Restaurant::all();
+        return response()->json([
+            "Restaurants" => $resto
+        ]);
+    }
 }
