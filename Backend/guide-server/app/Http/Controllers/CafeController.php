@@ -25,4 +25,10 @@ class CafeController extends Controller
             "Cafes" => $cafe
         ]);
     }
+    function get($id){
+        $cafe=cafe::find($id);
+        return response()->json([
+            "Cafe"=>$cafe
+        ]);
+    }
 }
