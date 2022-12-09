@@ -26,6 +26,7 @@ class UserController extends Controller
                 }else{
                     $user->update(["email"=>$request->email]);
                 }
+
             }
             if($request->has('password')){
                 $user->update(["password"=>bcrypt($request->password)]);
