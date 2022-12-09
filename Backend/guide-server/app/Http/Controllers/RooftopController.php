@@ -25,4 +25,10 @@ class RooftopController extends Controller
             "Rooftops" => $rooftop
         ]);
     }
+    function get($id){
+        $rooftop=rooftop::find($id);
+        return response()->json([
+            "Rooftop"=>$rooftop
+        ]);
+    }
 }
