@@ -26,4 +26,10 @@ class BarController extends Controller
             "Bars" => $bar
         ]);
     }
+    function get($id){
+        $bar=bar::find($id);
+        return response()->json([
+            "Bar"=>$bar
+        ]);
+    }
 }
