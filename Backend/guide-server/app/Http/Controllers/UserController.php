@@ -26,7 +26,6 @@ class UserController extends Controller
                 }else{
                     $user->update(["email"=>$request->email]);
                 }
-
             }
             if($request->has('password')){
                 $user->update(["password"=>bcrypt($request->password)]);
@@ -37,6 +36,25 @@ class UserController extends Controller
             return response()->json([
                 "User" => $user
             ]);
+        }else{
+            $users = User::where("email", $request->email)->exists();
+            if($users){
+                return response()->json([
+                    "User" => $users
+                ]);
+            }else{
+                $user = new User;
+                $user->first_name=$request->first_name;
+                $user->last_name=$request->last_name;
+                $user->email=$request->email;
+                $user->password=bcrypt($request->password);
+                $user->phone_number=$request->phone_number;
+                if($user->save()){
+                    return response()->json([
+                        "User" => $user->id 
+                    ]);
+                }
+            }
         }
     }
 }
