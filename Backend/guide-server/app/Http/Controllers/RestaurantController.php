@@ -30,6 +30,12 @@ class RestaurantController extends Controller
             "Restaurants" => $resto
         ]);
     }
+    function get($id){
+        $resto=restaurant::find($id);
+        return response()->json([
+            "Restaurant"=>$resto
+        ]);
+    }
     function searchPlace(Request $request){
         $resto = Restaurant::where("name", $request->name)->get();
         $bar = Bar::where("name", $request->name)->get();
