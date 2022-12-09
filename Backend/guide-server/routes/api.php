@@ -31,6 +31,7 @@ Route::group(["prefix" => "v0.1"], function() {
 		Route::group(["prefix" => "beaches"], function() {
 			Route::post("addBeach",[BeacheController::class,"add"]);
 			Route::get("getBeaches",[BeacheController::class,"list"]);
+			Route::get("get/{id}",[BeacheController::class,"get"]);
 		});
 		Route::group(["prefix" => "cafes"], function() {
 			Route::post("addCafe",[CafeController::class,"add"]);

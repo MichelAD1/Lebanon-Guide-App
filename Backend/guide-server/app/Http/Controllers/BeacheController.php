@@ -25,4 +25,10 @@ class BeacheController extends Controller
             "Beaches" => $beach
         ]);
     }
+    function get($id){
+        $beach=beache::find($id);
+        return response()->json([
+            "Beach"=>$beach
+        ]);
+    }
 }
