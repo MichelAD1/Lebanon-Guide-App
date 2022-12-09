@@ -11,7 +11,7 @@ use App\Http\Controllers\RooftopController;
 
 Route::group(["prefix" => "v0.1"], function() {
 	Route::group(["prefix" => "users"], function() {
-		
+		Route::post("signup/{id?}",[UserController::class,"signupOrUpdate"]);
 	});
     Route::group(["prefix" => "bars"], function() {
 		
