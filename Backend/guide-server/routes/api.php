@@ -16,12 +16,12 @@ Route::group(["prefix" => "v0.1"], function() {
 		Route::get("get/{id}",[UserController::class,"getUser"]);
 	});
 	Route::group(["prefix" => "places"], function() {
-		
+		Route::post("search",[RestaurantController::class,"searchPlace"]);
 		Route::group(["prefix" => "bars"], function() {
 		
 		});
 		Route::group(["prefix" => "restaurants"], function() {
-			
+			Route::post("addRestaurant",[RestaurantController::class,"add"]);
 		});
 		Route::group(["prefix" => "beaches"], function() {
 			
