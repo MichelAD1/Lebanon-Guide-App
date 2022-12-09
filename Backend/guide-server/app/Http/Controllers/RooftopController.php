@@ -19,4 +19,10 @@ class RooftopController extends Controller
             ]);
         }
     }
+    function list(){
+        $rooftop = rooftop::all();
+        return response()->json([
+            "Rooftops" => $rooftop
+        ]);
+    }
 }

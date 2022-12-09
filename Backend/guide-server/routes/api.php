@@ -35,7 +35,7 @@ Route::group(["prefix" => "v0.1"], function() {
 		});
 		Route::group(["prefix" => "rooftops"], function() {
 			Route::post("addRooftop",[RooftopController::class,"add"]);
-			
+			Route::get("getRooftops",[RooftopController::class,"list"]);			
 		});
 	});
     
