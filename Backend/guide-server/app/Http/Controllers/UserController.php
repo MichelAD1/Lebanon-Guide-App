@@ -40,7 +40,7 @@ class UserController extends Controller
             $users = User::where("email", $request->email)->exists();
             if($users){
                 return response()->json([
-                    "User" => $users
+                    "User" => "User Exist"
                 ]);
             }else{
                 $user = new User;
@@ -51,7 +51,7 @@ class UserController extends Controller
                 $user->phone_number=$request->phone_number;
                 if($user->save()){
                     return response()->json([
-                        "User" => $user->id 
+                        "User" => $user 
                     ]);
                 }
             }
