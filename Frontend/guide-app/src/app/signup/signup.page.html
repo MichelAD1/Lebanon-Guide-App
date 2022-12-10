@@ -8,19 +8,19 @@
     <div class="fname-info">
       <ion-label position="floating">First Name</ion-label>
       <div class="box">
-        <ion-input type="text" required></ion-input>
+        <ion-input type="text" required [(ngModel)]="first_name"></ion-input>
       </div>
     </div>
     <div class="lname-info">
       <ion-label position="floating">Last Name</ion-label>
       <div class="box">
-        <ion-input type="text" required></ion-input>
+        <ion-input type="text" [(ngModel)]="last_name" required></ion-input>
       </div>
     </div>
     <div class="phone-info">
       <ion-label position="floating" required>Phone Number</ion-label>
       <div class="box">
-        <ion-input type="number"></ion-input>
+        <ion-input type="number" [(ngModel)]="phone_number"></ion-input>
       </div>
     </div>
     <div class="email-info">
@@ -28,6 +28,7 @@
       <div class="box">
         <ion-input
           type="email"
+          [(ngModel)]="email"
           required
           placeholder="name@example.com"
         ></ion-input>
@@ -36,7 +37,12 @@
     <div class="pass-info">
       <ion-label position="floating">Password</ion-label>
       <div class="box">
-        <ion-input type="password" required placeholder="Password"></ion-input>
+        <ion-input
+          type="password"
+          [(ngModel)]="password"
+          required
+          placeholder="Password"
+        ></ion-input>
       </div>
     </div>
     <ion-button
