@@ -14,7 +14,21 @@ export class SignupPage implements OnInit {
   password: string = '';
   constructor(private router: Router, private http: HttpClient) {}
   goToHome() {
-    this.router.navigate(['/tabs']);
+    let postData = new FormData();
+    postData.append('first_name', this.first_name);
+    postData.append('last_name', this.last_name);
+    postData.append('phone_number', this.phone_number);
+    postData.append('email', this.email);
+    postData.append('password', this.password);
+    this.http
+      .post('http://127.0.0.1:8000/api/v0.1/users/signup', postData)
+      .subscribe((data) => {
+        let tmp = JSON.stringify(data);
+        if (JSON.parse(tmp)['User'] == 'User Exist') {
+        } else {
+          this.router.navigate(['/tabs', { user: JSON.parse(tmp)['User'] }]);
+        }
+      });
   }
   ngOnInit() {}
 }
