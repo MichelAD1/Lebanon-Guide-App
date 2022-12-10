@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -19,7 +19,14 @@ export class SigninPage implements OnInit {
       .post('http://127.0.0.1:8000/api/v0.1/users/login', postData)
       .subscribe((data) => {
         let tmp = JSON.stringify(data);
-        console.log(JSON.parse(tmp)['User']);
+        if (JSON.parse(tmp)['User'] == 'Not found') {
+          let message = document.getElementById(
+            'loginMessage'
+          ) as HTMLInputElement;
+          message.innerHTML = 'Incorrect Email or Password';
+        } else {
+          this.router.navigate(['/tabs', { item: JSON.parse(tmp)['User'] }]);
+        }
       });
   }
   goToSignup() {
