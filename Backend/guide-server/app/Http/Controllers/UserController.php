@@ -50,6 +50,8 @@ class UserController extends Controller
                 $user->password=hash('sha256', $request->password);
                 $user->phone_number=$request->phone_number;
                 if($user->save()){
+                    $user = User::where("email", $request->email)
+                        ->where("password", hash('sha256', $request->password))->get();
                     return response()->json([
                         "User" => $user 
                     ]);
