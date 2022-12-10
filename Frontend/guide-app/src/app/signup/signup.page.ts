@@ -44,7 +44,9 @@ export class SignupPage implements OnInit {
             message.className = 'exist';
             message.innerHTML = 'User Already Exist';
           } else {
-            this.router.navigate(['/tabs', { user: JSON.parse(tmp)['User'] }]);
+            this.router.navigate(['/tabs'], {
+              state: { user: JSON.parse(tmp)['User'] },
+            });
           }
         });
     }

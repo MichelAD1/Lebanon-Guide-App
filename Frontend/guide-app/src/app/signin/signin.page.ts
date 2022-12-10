@@ -31,7 +31,9 @@ export class SigninPage implements OnInit {
             message.className = 'not-found';
             message.innerHTML = 'Incorrect Email or Password';
           } else {
-            this.router.navigate(['/tabs', { user: JSON.parse(tmp)['User'] }]);
+            this.router.navigate(['/tabs'], {
+              state: { user: JSON.parse(tmp)['User'] },
+            });
           }
         });
     }

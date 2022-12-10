@@ -12,5 +12,12 @@ export class HomePage implements OnInit {
   submit() {
     this.router.navigate(['/display']);
   }
-  ngOnInit() {}
+  ngOnInit() {
+    let user = this.router.getCurrentNavigation()?.extras.state;
+    let tmp_user = JSON.stringify(user);
+    let temp_user = JSON.parse(tmp_user)['user'];
+    tmp_user = JSON.stringify(temp_user[0]);
+    temp_user = JSON.parse(tmp_user)['email'];
+    console.log(temp_user);
+  }
 }
