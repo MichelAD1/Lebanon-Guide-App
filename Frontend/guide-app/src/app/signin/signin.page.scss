@@ -178,6 +178,32 @@ a:hover {
 
   color: #f70606;
 }
+.empty {
+  text-decoration: none;
+  position: absolute;
+  height: 20px;
+  left: 126px;
+  right: 40px;
+  top: 540px;
+
+  /* Body 1 - regular 14 (20, 0.1px) */
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+
+  /* neutral/gray dark */
+
+  color: #f70606;
+}
 .no-account {
   text-decoration: none;
   position: absolute;
