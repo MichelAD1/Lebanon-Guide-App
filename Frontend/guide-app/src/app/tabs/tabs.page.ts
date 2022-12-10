@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,21 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./tabs.page.scss'],
 })
 export class TabsPage implements OnInit {
-  public user: any = '';
-  public tmp_user: any = '';
-  public temp_user: any = '';
-  constructor(private router: Router) {}
-  goToAddReview() {
-    console.log(this.temp_user);
-  }
-  goToAccount() {
-    console.log(this.temp_user);
-  }
+  constructor(private router: Router, private storageService: StorageService) {}
+
   ngOnInit() {
-    this.user = this.router.getCurrentNavigation()?.extras.state;
-    this.tmp_user = JSON.stringify(this.user);
-    this.temp_user = JSON.parse(this.tmp_user)['user'];
-    this.tmp_user = JSON.stringify(this.temp_user[0]);
-    this.temp_user = JSON.parse(this.tmp_user)['id'];
+    let user = this.router.getCurrentNavigation()?.extras.state;
+    let tmp_user = JSON.stringify(user);
+    let temp_user = JSON.parse(tmp_user)['user'];
+    tmp_user = JSON.stringify(temp_user[0]);
+    temp_user = JSON.parse(tmp_user)['id'];
+    console.log('This is id: ' + temp_user);
+    this.storageService.store('ID', temp_user);
   }
 }
