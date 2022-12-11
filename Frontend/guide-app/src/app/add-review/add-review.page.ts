@@ -8,9 +8,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-review.page.scss'],
 })
 export class AddReviewPage implements OnInit {
+  name: string = '';
+  type: string = '';
+  location: any = '';
+  description: string = '';
+  image: string = '';
   constructor(private router: Router, private http: HttpClient) {}
-  goToHome() {
-    this.router.navigate(['/tabs']);
+  ionViewWillEnter() {
+    let message = document.getElementById('addMessage') as HTMLInputElement;
+    message.className = 'add';
+    message.innerHTML = '';
   }
-  ngOnInit() {}
+  goToHome() {
+    if (
+      this.name == '' ||
+      this.location == '' ||
+      this.type == '' ||
+      this.description == '' ||
+      this.image == ''
+    ) {
+      let message = document.getElementById('addMessage') as HTMLInputElement;
+      message.className = 'add';
+      message.innerHTML = 'Please Fill All Fields';
+    } else {
+    }
+  }
+
+  ngOnInit() {
+    this.ionViewWillEnter;
+  }
 }
