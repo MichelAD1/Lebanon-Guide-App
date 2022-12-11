@@ -20,7 +20,16 @@ export class AccountPage implements OnInit {
     private http: HttpClient,
     private storageService: StorageService
   ) {}
-  removeUser() {}
+  removeUser() {
+    this.storageService.get('ID').then((id) => {
+      this.id = id;
+      this.http
+        .get('http://127.0.0.1:8000/api/v0.1/users/delete/' + this.id)
+        .subscribe(() => {
+          this.router.navigate(['/signin']);
+        });
+    });
+  }
   goToSignin() {
     this.router.navigate(['/signin']);
   }
