@@ -8,11 +8,16 @@
   <div class="back-img">
     <img src="../../assets/images/resto 2.jpg" alt="" />
   </div>
+
   <div class="disp-container">
-    <p id="type" class="type-item"></p>
-    <h1 id="name" class="location-and-name">
-      <ion-icon name="location-outline" style="margin-left: 10px"></ion-icon>
-    </h1>
-    <a (click)="viewDetails()" class="details">Read More</a>
+    <div class="list" *ngFor="let item of array;">
+      <p id="type" class="type-item">{{type}}</p>
+      <h1 id="name" class="location-and-name">
+        {{item.name}}
+        <ion-icon name="location-outline" style="margin-left: 10px"></ion-icon
+        >{{item.location}}
+      </h1>
+      <a (click)="viewDetails(item.id)" class="details">Read More</a>
+    </div>
   </div>
 </ion-content>
