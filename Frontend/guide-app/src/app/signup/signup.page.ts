@@ -13,6 +13,11 @@ export class SignupPage implements OnInit {
   email: string = '';
   password: string = '';
   constructor(private router: Router, private http: HttpClient) {}
+  ionViewWillEnter() {
+    let message = document.getElementById('signupMessage') as HTMLInputElement;
+    message.className = 'exist';
+    message.innerHTML = '';
+  }
   goToHome() {
     if (
       this.email == '' ||
@@ -51,5 +56,7 @@ export class SignupPage implements OnInit {
         });
     }
   }
-  ngOnInit() {}
+  ngOnInit() {
+    this.ionViewWillEnter;
+  }
 }

@@ -34,6 +34,10 @@ export class AccountPage implements OnInit {
     this.router.navigate(['/signin']);
   }
   ionViewWillEnter() {
+    let message = document.getElementById('updateMessage') as HTMLInputElement;
+    message.className = 'update';
+    message.innerHTML = '';
+    let fname = document.getElementById('fname') as HTMLInputElement;
     this.storageService.get('ID').then((id) => {
       this.id = id;
       this.http

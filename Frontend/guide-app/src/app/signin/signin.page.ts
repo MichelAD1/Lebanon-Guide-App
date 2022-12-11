@@ -11,6 +11,10 @@ export class SigninPage implements OnInit {
   email: string = '';
   password: string = '';
   constructor(private router: Router, private http: HttpClient) {}
+  ionViewWillEnter() {
+    let message = document.getElementById('loginMessage') as HTMLInputElement;
+    message.innerHTML = '';
+  }
   checkUser() {
     if (this.email == '' || this.password == '') {
       let message = document.getElementById('loginMessage') as HTMLInputElement;
