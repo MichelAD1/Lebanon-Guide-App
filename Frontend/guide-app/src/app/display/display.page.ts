@@ -37,15 +37,38 @@ export class DisplayPage implements OnInit {
             this.array = temp;
           });
       } else if (place === 'Cafe') {
-        console.log('Cafe');
+        this.http
+          .get('http://127.0.0.1:8000/api/v0.1/places/cafes/getCafes')
+          .subscribe((data) => {
+            let tmp = JSON.stringify(data);
+            let temp = JSON.parse(tmp)['Cafes'];
+            this.array = temp;
+          });
       } else if (place === 'Bar') {
-        console.log('Bar');
+        this.http
+          .get('http://127.0.0.1:8000/api/v0.1/places/bars/getBars')
+          .subscribe((data) => {
+            let tmp = JSON.stringify(data);
+            let temp = JSON.parse(tmp)['Bars'];
+            this.array = temp;
+          });
       } else if (place === 'Beach') {
-        console.log('Beach');
+        this.http
+          .get('http://127.0.0.1:8000/api/v0.1/places/beaches/getBeaches')
+          .subscribe((data) => {
+            let tmp = JSON.stringify(data);
+            let temp = JSON.parse(tmp)['Beaches'];
+            this.array = temp;
+          });
       } else if (place === 'Rooftop') {
-        console.log('rooftop');
+        this.http
+          .get('http://127.0.0.1:8000/api/v0.1/places/rooftops/getRooftops')
+          .subscribe((data) => {
+            let tmp = JSON.stringify(data);
+            let temp = JSON.parse(tmp)['Rooftops'];
+            this.array = temp;
+          });
       } else if (place) {
-        console.log(place);
       }
     });
   }
