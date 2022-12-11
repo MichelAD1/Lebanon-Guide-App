@@ -53,6 +53,39 @@ export class AddReviewPage implements OnInit {
             .subscribe(() => {
               this.router.navigate(['/tabs']);
             });
+        } else if (this.type === 'cafe') {
+          this.http
+            .post(
+              'http://127.0.0.1:8000/api/v0.1/places/cafes/addCafe',
+              postData
+            )
+            .subscribe(() => {
+              this.router.navigate(['/tabs']);
+            });
+        } else if (this.type === 'bar') {
+          this.http
+            .post('http://127.0.0.1:8000/api/v0.1/places/bars/addBar', postData)
+            .subscribe(() => {
+              this.router.navigate(['/tabs']);
+            });
+        } else if (this.type === 'rooftop') {
+          this.http
+            .post(
+              'http://127.0.0.1:8000/api/v0.1/places/rooftops/addRooftop',
+              postData
+            )
+            .subscribe(() => {
+              this.router.navigate(['/tabs']);
+            });
+        } else if (this.type === 'beach') {
+          this.http
+            .post(
+              'http://127.0.0.1:8000/api/v0.1/places/beaches/addBeach',
+              postData
+            )
+            .subscribe(() => {
+              this.router.navigate(['/tabs']);
+            });
         }
       });
     }
