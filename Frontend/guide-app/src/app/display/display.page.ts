@@ -16,8 +16,9 @@ export class DisplayPage implements OnInit {
     private http: HttpClient,
     private storageService: StorageService
   ) {}
-  viewDetails(place_id: any) {
-    console.log(place_id);
+  viewDetails(place_id: any, type: any) {
+    this.storageService.store('Type', type);
+    this.storageService.store('PlaceID', place_id);
     this.router.navigateByUrl('/details');
   }
   goBack() {
