@@ -7,35 +7,23 @@
   </div>
 
   <div class="disp-container">
-    <p class="type-item">Restaurant</p>
-    <h1 class="location-and-name">
-      westwood<ion-icon
-        name="location-outline"
-        style="margin-left: 10px"
-      ></ion-icon>
-      zahle
-    </h1>
-    <div class="item-img">
-      <img src="../../assets/images/resto 1.png" alt="" />
-    </div>
-    <div class="item-desc">
-      <p>
-        A lovely vacation for anyone seeking to learn Zahle's genuine identity
-        and take in the mountains This resort provides variously sized wooden
-        cottages with private gardens.<br />
-        The bungalow has a fridge, air conditioning, a TV, and quick Wi-Fi! It's
-        also quite cozy.During the day you can enjoy tanning and swimming by the
-        pool 💦 You can use the pool without staying in the hotel. Don’t forget
-        to explore Zahle, there are a lot places to visit around😍 🏠 Location
-        9/10 🍽 Food 7/10 ✨Atmosphere 8,5/10 💦Hygiene 7,5/10 💸Affordable 8/10
-        👤Service 6,8/10 💕Overall: 7,8/10 👨‍👩‍👧‍👦Kids friendly 🐶Pet friendly 💵120$
-        per night including pool access and breakfast 🍳 ✨Overall we loved
-        exploring Zahle and glad we picked this place for our staycation. It was
-        an amazing location with wonderful scenery, still they are new in the
-        business so could work more on the food and service. 🧡When to go:
-        Friends/family/couples getaway
-      </p>
-      <div class="empty"></div>
+    <div class="list" *ngFor="let value of [array]">
+      {{value}} >
+      <p class="type-item">{{type}}</p>
+      <h1 class="location-and-name">
+        {{value.name}}<ion-icon
+          name="location-outline"
+          style="margin-left: 10px"
+        ></ion-icon>
+        {{value.location}}
+      </h1>
+      <div class="item-img">
+        <img src="../../assets/images/{{value.image}}" alt="" />
+      </div>
+      <div class="item-desc">
+        <p>{{value.description}}</p>
+        <div class="empty"></div>
+      </div>
     </div>
   </div>
 </ion-content>

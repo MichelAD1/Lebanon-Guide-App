@@ -9,6 +9,8 @@ import { StorageService } from '../services/storage.service';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
+  array: any = [];
+  type: any = '';
   constructor(
     private router: Router,
     private http: HttpClient,
@@ -18,17 +20,58 @@ export class DetailsPage implements OnInit {
     this.router.navigateByUrl('/display');
   }
   ionViewWillEnter() {
-    this.storageService.get('Type').then((type) => {
-      if (type === 'Restaurant') {
-        this.storageService.get('PlaceID').then((id) => {});
-      } else if (type === 'Cafe') {
-        this.storageService.get('PlaceID').then((id) => {});
-      } else if (type === 'Bar') {
-        this.storageService.get('PlaceID').then((id) => {});
-      } else if (type === 'Rooftop') {
-        this.storageService.get('PlaceID').then((id) => {});
-      } else if (type === 'Beach') {
-        this.storageService.get('PlaceID').then((id) => {});
+    this.storageService.get('Type').then((typee) => {
+      this.type = typee;
+      if (typee === 'Restaurant') {
+        this.storageService.get('PlaceID').then((id) => {
+          this.http
+            .get('http://127.0.0.1:8000/api/v0.1/places/restaurants/get/' + id)
+            .subscribe((data) => {
+              let tmp = JSON.stringify(data);
+              let temp = JSON.parse(tmp)['Restaurant'];
+              this.array = temp;
+            });
+        });
+      } else if (typee === 'Cafe') {
+        this.storageService.get('PlaceID').then((id) => {
+          this.http
+            .get('http://127.0.0.1:8000/api/v0.1/places/cafes/get/' + id)
+            .subscribe((data) => {
+              let tmp = JSON.stringify(data);
+              let temp = JSON.parse(tmp)['Cafe'];
+              this.array = temp;
+            });
+        });
+      } else if (typee === 'Bar') {
+        this.storageService.get('PlaceID').then((id) => {
+          this.http
+            .get('http://127.0.0.1:8000/api/v0.1/places/bars/get/' + id)
+            .subscribe((data) => {
+              let tmp = JSON.stringify(data);
+              let temp = JSON.parse(tmp)['Bar'];
+              this.array = temp;
+            });
+        });
+      } else if (typee === 'Rooftop') {
+        this.storageService.get('PlaceID').then((id) => {
+          this.http
+            .get('http://127.0.0.1:8000/api/v0.1/places/rooftops/get/' + id)
+            .subscribe((data) => {
+              let tmp = JSON.stringify(data);
+              let temp = JSON.parse(tmp)['Rooftop'];
+              this.array = temp;
+            });
+        });
+      } else if (typee === 'Beach') {
+        this.storageService.get('PlaceID').then((id) => {
+          this.http
+            .get('http://127.0.0.1:8000/api/v0.1/places/beaches/get/' + id)
+            .subscribe((data) => {
+              let tmp = JSON.stringify(data);
+              let temp = JSON.parse(tmp)['Beach'];
+              this.array = temp;
+            });
+        });
       }
     });
   }
