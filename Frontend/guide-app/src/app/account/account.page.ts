@@ -20,6 +20,7 @@ export class AccountPage implements OnInit {
     private http: HttpClient,
     private storageService: StorageService
   ) {}
+  removeUser() {}
   goToSignin() {
     this.router.navigate(['/signin']);
   }
