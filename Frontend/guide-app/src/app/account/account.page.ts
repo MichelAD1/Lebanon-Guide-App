@@ -47,6 +47,44 @@ export class AccountPage implements OnInit {
         });
     });
   }
+  updateUser() {
+    this.storageService.get('ID').then((id) => {
+      this.id = id;
+      let postData = new FormData();
+      if (this.first_name != '') {
+        postData.append('first_name', this.first_name);
+      }
+      if (this.last_name != '') {
+        postData.append('last_name', this.last_name);
+      }
+      if (this.email != '') {
+        postData.append('email', this.email);
+      }
+      if (this.phone_number != '') {
+        postData.append('phone_number', this.phone_number);
+      }
+      if (this.password != '') {
+        postData.append('password', this.password);
+      }
+      this.http
+        .post(
+          'http://127.0.0.1:8000/api/v0.1/users/signup/' + this.id,
+          postData
+        )
+        .subscribe((data) => {
+          let tmp = JSON.stringify(data);
+          if (JSON.parse(tmp)['User'] == 'Invalid email') {
+            let message = document.getElementById(
+              'updateMessage'
+            ) as HTMLInputElement;
+            message.className = 'update';
+            message.innerHTML = 'Email Already Exist';
+          } else {
+            this.router.navigate(['/tabs']);
+          }
+        });
+    });
+  }
 
   ngOnInit() {
     this.ionViewWillEnter;
