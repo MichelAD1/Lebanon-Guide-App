@@ -16,7 +16,6 @@ export class TabsPage implements OnInit {
     let temp_user = JSON.parse(tmp_user)['user'];
     tmp_user = JSON.stringify(temp_user[0]);
     temp_user = JSON.parse(tmp_user)['id'];
-    console.log('This is id: ' + temp_user);
     this.storageService.store('ID', temp_user);
   }
 }

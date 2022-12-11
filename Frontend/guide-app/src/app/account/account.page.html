@@ -8,27 +8,52 @@
     <div class="box">
       <div class="fname-info">
         <div class="box-input">
-          <ion-input type="text" placeholder="First Name"></ion-input>
+          <ion-input
+            id="fname"
+            type="text"
+            [(ngModel)]="first_name"
+            placeholder="First Name"
+          ></ion-input>
         </div>
       </div>
       <div class="lname-info">
         <div class="box-input">
-          <ion-input type="text" placeholder="Last Name"></ion-input>
+          <ion-input
+            id="lname"
+            [(ngModel)]="last_name"
+            type="text"
+            placeholder="Last Name"
+          ></ion-input>
         </div>
       </div>
       <div class="phone-info">
         <div class="box-input">
-          <ion-input type="number" placeholder="Phone Number"></ion-input>
+          <ion-input
+            id="number"
+            type="number"
+            [(ngModel)]="phone_number"
+            placeholder="Phone Number"
+          ></ion-input>
         </div>
       </div>
       <div class="email-info">
         <div class="box-input">
-          <ion-input type="text" placeholder="Email"></ion-input>
+          <ion-input
+            id="email"
+            type="text"
+            [(ngModel)]="email"
+            placeholder="Email"
+          ></ion-input>
         </div>
       </div>
       <div class="pass-info">
         <div class="box-input">
-          <ion-input type="password" placeholder="Password"></ion-input>
+          <ion-input
+            id="password"
+            type="password"
+            [(ngModel)]="password"
+            placeholder="Password"
+          ></ion-input>
         </div>
       </div>
       <ion-button
@@ -47,5 +72,6 @@
         >Save</ion-button
       >
     </div>
+    <p id="updateMessage"></p>
   </div>
 </ion-content>
