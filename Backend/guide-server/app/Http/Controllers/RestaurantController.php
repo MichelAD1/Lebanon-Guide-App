@@ -37,12 +37,48 @@ class RestaurantController extends Controller
         ]);
     }
     function searchPlace(Request $request){
+        $array=[];
+        $count=0;
+        $count_e=0;
         $resto = Restaurant::where("name", $request->name)->get();
         $bar = Bar::where("name", $request->name)->get();
         $beach = Beache::where("name", $request->name)->get();
         $cafe = Cafe::where("name", $request->name)->get();
         $rooftop = Rooftop::where("name", $request->name)->get();
-        $result=array_merge(json_decode($resto, true),json_decode($bar, true),json_decode($beach, true),json_decode($cafe, true),json_decode($rooftop, true));
+        if(!$cafe->isEmpty()){
+            $count_e=count($cafe);
+            for($i=0;$i<$count_e;$i++){
+                $array[$count]="Cafe";
+                $count++;
+            }
+            
+        }if(!$rooftop->isEmpty()){
+            $count_e=count($rooftop);
+                for($i=0;$i<$count_e;$i++){
+                    $array[$count]="Rooftop";
+                    $count++;
+                }
+            
+        }if(!$resto->isEmpty()){
+            $count_e=count($resto);
+                for($i=0;$i<$count_e;$i++){
+                    $array[$count]="Restaurant";
+                    $count++;
+                }
+        }if(!$bar->isEmpty()){
+            $count_e=count($bar);
+                for($i=0;$i<$count_e;$i++){
+                    $array[$count]="Bar";
+                    $count++;
+                }    
+        }if(!$beach->isEmpty()){
+            $count_e=count($beach);
+            for($i=0;$i<$count_e;$i++){
+                $array[$count]="Beach";
+                $count++;
+            }
+        }
+        $result=array_merge(json_decode($resto, true),json_decode($bar, true),json_decode($beach, true),json_decode($cafe, true),json_decode($rooftop, true),$array);
         return response()->json([
             "Places" => $result
         ]);
