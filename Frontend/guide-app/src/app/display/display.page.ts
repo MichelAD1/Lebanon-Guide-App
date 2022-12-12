@@ -10,7 +10,9 @@ import { StorageService } from '../services/storage.service';
 })
 export class DisplayPage implements OnInit {
   array: any = [];
-  type: any = '';
+  type: any = [];
+  count: any = 0;
+
   constructor(
     private router: Router,
     private http: HttpClient,
@@ -26,7 +28,6 @@ export class DisplayPage implements OnInit {
   }
   ionViewWillEnter() {
     this.storageService.get('Place').then((place) => {
-      this.type = place;
       if (place === 'Restaurant') {
         this.http
           .get(
@@ -36,6 +37,11 @@ export class DisplayPage implements OnInit {
             let tmp = JSON.stringify(data);
             let temp = JSON.parse(tmp)['Restaurants'];
             this.array = temp;
+            for (let i = 0; i < temp.length; i++) {
+              this.type[i] = place;
+              this.count++;
+            }
+            this.count = 0;
           });
       } else if (place === 'Cafe') {
         this.http
@@ -44,6 +50,11 @@ export class DisplayPage implements OnInit {
             let tmp = JSON.stringify(data);
             let temp = JSON.parse(tmp)['Cafes'];
             this.array = temp;
+            for (let i = 0; i < temp.length; i++) {
+              this.type[i] = place;
+              this.count++;
+            }
+            this.count = 0;
           });
       } else if (place === 'Bar') {
         this.http
@@ -52,6 +63,11 @@ export class DisplayPage implements OnInit {
             let tmp = JSON.stringify(data);
             let temp = JSON.parse(tmp)['Bars'];
             this.array = temp;
+            for (let i = 0; i < temp.length; i++) {
+              this.type[i] = place;
+              this.count++;
+            }
+            this.count = 0;
           });
       } else if (place === 'Beach') {
         this.http
@@ -60,6 +76,11 @@ export class DisplayPage implements OnInit {
             let tmp = JSON.stringify(data);
             let temp = JSON.parse(tmp)['Beaches'];
             this.array = temp;
+            for (let i = 0; i < temp.length; i++) {
+              this.type[i] = place;
+              this.count++;
+            }
+            this.count = 0;
           });
       } else if (place === 'Rooftop') {
         this.http
@@ -68,8 +89,29 @@ export class DisplayPage implements OnInit {
             let tmp = JSON.stringify(data);
             let temp = JSON.parse(tmp)['Rooftops'];
             this.array = temp;
+            for (let i = 0; i < temp.length; i++) {
+              this.type[i] = place;
+              this.count++;
+            }
+            this.count = 0;
           });
       } else if (place) {
+        let postData = new FormData();
+        postData.append('name', place);
+        this.http
+          .post('http://127.0.0.1:8000/api/v0.1/places/search', postData)
+          .subscribe((data) => {
+            let tmp = JSON.stringify(data);
+            let temp = JSON.parse(tmp)['Places'];
+            let array_tmp = [];
+            for (let i = 0; i < temp.length / 2; i++) {
+              array_tmp[i] = temp[i];
+              this.type[i] = temp[i + temp.length / 2];
+              this.count++;
+            }
+            this.count = 0;
+            this.array = array_tmp;
+          });
       }
     });
   }

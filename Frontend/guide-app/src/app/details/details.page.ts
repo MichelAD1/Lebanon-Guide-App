@@ -10,7 +10,8 @@ import { StorageService } from '../services/storage.service';
 })
 export class DetailsPage implements OnInit {
   array: any = [];
-  type: any = '';
+  type: any = [];
+  count: any = 0;
   constructor(
     private router: Router,
     private http: HttpClient,
@@ -22,7 +23,7 @@ export class DetailsPage implements OnInit {
   ionViewWillEnter() {
     this.storageService.get('Type').then((typee) => {
       this.type = typee;
-      if (typee === 'Restaurant') {
+      if (typee[0] === 'Restaurant') {
         this.storageService.get('PlaceID').then((id) => {
           this.http
             .get('http://127.0.0.1:8000/api/v0.1/places/restaurants/get/' + id)
@@ -32,7 +33,7 @@ export class DetailsPage implements OnInit {
               this.array = temp;
             });
         });
-      } else if (typee === 'Cafe') {
+      } else if (typee[0] === 'Cafe') {
         this.storageService.get('PlaceID').then((id) => {
           this.http
             .get('http://127.0.0.1:8000/api/v0.1/places/cafes/get/' + id)
@@ -42,7 +43,7 @@ export class DetailsPage implements OnInit {
               this.array = temp;
             });
         });
-      } else if (typee === 'Bar') {
+      } else if (typee[0] === 'Bar') {
         this.storageService.get('PlaceID').then((id) => {
           this.http
             .get('http://127.0.0.1:8000/api/v0.1/places/bars/get/' + id)
@@ -52,7 +53,7 @@ export class DetailsPage implements OnInit {
               this.array = temp;
             });
         });
-      } else if (typee === 'Rooftop') {
+      } else if (typee[0] === 'Rooftop') {
         this.storageService.get('PlaceID').then((id) => {
           this.http
             .get('http://127.0.0.1:8000/api/v0.1/places/rooftops/get/' + id)
@@ -62,7 +63,7 @@ export class DetailsPage implements OnInit {
               this.array = temp;
             });
         });
-      } else if (typee === 'Beach') {
+      } else if (typee[0] === 'Beach') {
         this.storageService.get('PlaceID').then((id) => {
           this.http
             .get('http://127.0.0.1:8000/api/v0.1/places/beaches/get/' + id)

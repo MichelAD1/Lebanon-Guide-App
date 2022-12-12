@@ -7,9 +7,9 @@
   </div>
 
   <div class="disp-container">
-    <div class="list" *ngFor="let value of [array]">
+    <div class="list" *ngFor="let value of [array];let i=index">
       {{value}} >
-      <p class="type-item">{{type}}</p>
+      <p class="type-item">{{type[i]}}</p>
       <h1 class="location-and-name">
         {{value.name}}<ion-icon
           name="location-outline"
