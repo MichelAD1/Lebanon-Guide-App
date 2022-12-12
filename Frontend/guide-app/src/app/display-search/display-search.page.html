@@ -1,0 +1,22 @@
+<ion-content class="background">
+  <div class="toolbar">
+    <h1 class="leb-guide">Lebanon's Guide</h1>
+    <ion-button (click)="goBack()" class="back-button"
+      ><ion-icon style="width: 150px" name="arrow-back-outline"></ion-icon
+    ></ion-button>
+  </div>
+  <div class="back-img">
+    <img src="../../assets/images/resto 2.jpg" alt="" />
+  </div>
+
+  <div class="disp-container">
+    <div class="list" *ngFor="let item of array;let i=index">
+      <p id="place_type" class="type-item">{{type[i]}}</p>
+      <h1 id="name" class="location-and-name">
+        {{item.name}}
+        <ion-icon name="location-outline" style="margin-left: 10px"></ion-icon
+        >{{item.location}}
+      </h1>
+    </div>
+  </div>
+</ion-content>

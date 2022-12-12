@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'details',
     loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
   },
+  {
+    path: 'display-search',
+    loadChildren: () => import('./display-search/display-search.module').then( m => m.DisplaySearchPageModule)
+  },
 ];
 
 @NgModule({

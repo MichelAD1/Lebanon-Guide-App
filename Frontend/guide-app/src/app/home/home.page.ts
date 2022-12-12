@@ -37,7 +37,7 @@ export class HomePage implements OnInit {
   }
   submitSearch() {
     this.storageService.store('Place', this.search);
-    this.router.navigate(['/display']);
+    this.router.navigate(['/display-search']);
   }
   ngOnInit() {}
 }

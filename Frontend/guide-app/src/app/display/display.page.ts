@@ -95,23 +95,6 @@ export class DisplayPage implements OnInit {
             }
             this.count = 0;
           });
-      } else if (place) {
-        let postData = new FormData();
-        postData.append('name', place);
-        this.http
-          .post('http://127.0.0.1:8000/api/v0.1/places/search', postData)
-          .subscribe((data) => {
-            let tmp = JSON.stringify(data);
-            let temp = JSON.parse(tmp)['Places'];
-            let array_tmp = [];
-            for (let i = 0; i < temp.length / 2; i++) {
-              array_tmp[i] = temp[i];
-              this.type[i] = temp[i + temp.length / 2];
-              this.count++;
-            }
-            this.count = 0;
-            this.array = array_tmp;
-          });
       }
     });
   }
