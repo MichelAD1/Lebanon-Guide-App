@@ -13,3 +13,9 @@
 <img style="width:200px; height:400px;"alt="img" src="ss\ss7.png">
 <img style="width:200px; height:400px;"alt="img" src="ss\ss8.png">
 </div>
+<h2> :radio_button: Stacks </h2>
+<div class="gallery">
+<img style="width:50px; height:50px;"alt="img" src="ss\typescript.png">
+<img style="width:50px; height:50px;"alt="img" src="ss\php.png">
+<img style="width:50px; height:50px;"alt="img" src="ss\angular.png">
+</div>
