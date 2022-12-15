@@ -19,3 +19,8 @@
 <img style="width:50px; height:50px;"alt="img" src="ss\php.png">
 <img style="width:50px; height:50px;"alt="img" src="ss\angular.png">
 </div>
+<h2> :radio_button: Instructions </h2>
+<p>-Download and run XAMPP on your desktop</p>
+<p>-Create a database called lebanon-guide-appdb</p>
+<p>-Open your terminal, navigate to api folder and run php artisan migrate</p>
+<p>-Open cmd navigate to app and run ionic serve --lab or ionic serve</p>
